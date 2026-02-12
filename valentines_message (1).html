@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Cupcake ❤️</title>
+<style>
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#ff8ecf,#8ecbff);font-family:'Segoe UI',sans-serif;overflow:hidden;text-align:center;color:white}
+.page{position:absolute;inset:0;display:flex;justify-content:center;align-items:center}
+.hidden{display:none}
+.container{position:relative;z-index:2;max-width:750px;padding:20px;animation:fadeIn 2s ease-in-out}
+h1{font-size:3em;margin-bottom:10px}
+.date{font-size:1.1em;opacity:.9;margin-bottom:20px}
+p{font-size:1.25em;line-height:1.7}
+.quote{margin-top:25px;font-style:italic;opacity:.9}
+.card{max-width:800px;padding:28px 26px;border-radius:22px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.sig{margin-top:22px;font-style:italic;text-align:right;opacity:.9}
+button{margin-top:25px;padding:12px 22px;border:none;border-radius:25px;background:white;color:#ff4d6d;font-size:1.1em;cursor:pointer;transition:.3s}
+button:hover{transform:scale(1.1)}
+.heart,.flower,.photo{position:absolute;animation:float linear infinite;pointer-events:none}
+.heart{color:#ff2e63;font-size:24px}
+.flower{font-size:28px}
+.photo{width:120px;height:120px;object-fit:cover;border-radius:50%;filter:drop-shadow(0 10px 15px rgba(0,0,0,.25))}
+@keyframes float{0%{transform:translateY(100vh) scale(.6);opacity:0}50%{opacity:1}100%{transform:translateY(-10vh) scale(1.2);opacity:0}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body><!-- PAGE 1 --><div id="page1" class="page">
+<div class="container">
+<h1>Happy Valentine’s Day, Cupcake 💖</h1>
+<div class="date">Since 23 September 2025 ❤️</div>
+<p>Out of billions of people in this world, somehow our paths crossed and that became my favourite coincidence. If life restarted a thousand times, I’d still hope every version leads me back to you.</p>
+<p>If there were infinite timelines like Stranger Things, I’d still cross every world just to find you again.</p>
+<p>Like Percy Jackson belongs to the sea, my heart belongs with you.</p>
+<p>In true Bridgerton fashion you are, and always will be, the object of all my affection.</p>
+<div class="quote">Pink skies, blue dreams, and you my favourite forever.</div>
+<button onclick="openLetter()">Open my heart 💌</button>
+</div>
+</div><!-- PAGE 2 --><div id="page2" class="page hidden">
+<div class="card">
+<h1>To the one who found me 🌙</h1>
+<p>I don’t think you realise how quietly important you became to my days. At first it was just messages, just conversations, just small moments but somewhere between good mornings and late night talks, you stopped being a part of my day and became the reason I looked forward to it.</p>
+<p>You taught me that comfort isn’t always silence, sometimes it’s a name lighting up your screen. Sometimes it’s knowing there’s a person who listens to the smallest details you almost didn’t say. With you everything feels easy and real.</p>
+<p>I love how you exist in my thoughts randomly. A song plays and I think of you. The sky changes colour and I wish you could see it with me. Something funny happens and my first instinct is to tell you.</p>
+<p>If distance is part of our story, then patience will be too. Because some people aren’t meant to be rushed they’re meant to be chosen again and again until the day you finally stand next to them.</p>
+<p>So this is me choosing you. Not just today, but in ordinary days too.</p>
+<p class="sig">Yours, in every timeline ❤️</p>
+<button onclick="goBack()">Go back</button>
+</div>
+</div><script>
+function openLetter(){document.getElementById('page1').classList.add('hidden');document.getElementById('page2').classList.remove('hidden');document.body.style.background='linear-gradient(160deg,#1b1b2f,#162447,#1f4068)'}
+function goBack(){document.getElementById('page2').classList.add('hidden');document.getElementById('page1').classList.remove('hidden');document.body.style.background='linear-gradient(135deg,#ff8ecf,#8ecbff)'}
+function spawn(type,content,duration){const el=document.createElement(type==='img'?'img':'div');el.className=type==='img'?'photo':type;if(type==='img')el.src=content;else el.innerHTML=content;el.style.left=Math.random()*100+'vw';el.style.animationDuration=duration+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),duration*1000)}
+setInterval(()=>spawn('heart','❤️',Math.random()*3+3),400)
+const flowers=['🌷','🌹','🌸','💐','🌺','🤍🌹','❤️🌹']
+setInterval(()=>spawn('flower',flowers[Math.floor(Math.random()*flowers.length)],Math.random()*4+5),900)
+const photos=['her.png','me.png']
+setInterval(()=>spawn('img',photos[Math.floor(Math.random()*photos.length)],Math.random()*6+7),1800)
+</script></body>
+</html>
