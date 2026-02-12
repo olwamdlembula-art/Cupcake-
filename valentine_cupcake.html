@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Cupcake ❤️</title><style>
+    body{
+        margin:0;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:linear-gradient(135deg,#ff8ecf,#8ecbff);
+        font-family:'Segoe UI',sans-serif;
+        overflow:hidden;
+        text-align:center;
+        color:white;
+    }
+
+    .container{
+        position:relative;
+        z-index:2;
+        max-width:750px;
+        padding:20px;
+        animation:fadeIn 2s ease-in-out;
+    }
+
+    h1{
+        font-size:3em;
+        margin-bottom:10px;
+    }
+
+    .date{
+        font-size:1.1em;
+        opacity:0.9;
+        margin-bottom:20px;
+    }
+
+    p{
+        font-size:1.3em;
+        line-height:1.7;
+    }
+
+    .quote{
+        margin-top:25px;
+        font-style:italic;
+        opacity:0.9;
+    }
+
+    .heart{
+        position:absolute;
+        color:#ff2e63;
+        font-size:24px;
+        animation:float 6s linear infinite;
+    }
+
+    .flower{
+        position:absolute;
+        font-size:28px;
+        animation:float 8s linear infinite;
+    }
+
+    @keyframes float{
+        0%{transform:translateY(100vh) scale(0.5);opacity:0;}
+        50%{opacity:1;}
+        100%{transform:translateY(-10vh) scale(1.2);opacity:0;}
+    }
+
+    @keyframes fadeIn{
+        from{opacity:0;transform:translateY(20px);} 
+        to{opacity:1;transform:translateY(0);} 
+    }
+
+    button{
+        margin-top:25px;
+        padding:12px 22px;
+        border:none;
+        border-radius:25px;
+        background:white;
+        color:#ff4d6d;
+        font-size:1.1em;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    button:hover{
+        transform:scale(1.1);
+    }
+</style></head>
+<body><div class="container">
+    <h1>Happy Valentine’s Day, Cupcake 💖</h1>
+    <div class="date">Since 23 September ❤️</div><p>
+    Out of everyone in every place and every possible moment…
+    I somehow found you. And I’d choose you again — every time.
+</p>
+
+<p>
+    If there were infinite timelines like Stranger Things,
+    I’d still cross every world just to find you again.
+</p>
+
+<p>
+    Like Percy Jackson belongs to the sea,
+    my heart belongs with you.
+</p>
+
+<p>
+    In true Bridgerton fashion —
+    you are, and always will be,
+    the object of all my affection.
+</p>
+
+<div class="quote">
+    Pink skies, blue dreams, and you — my favourite forever.
+</div>
+
+<button onclick="loveMessage()">Open my heart 💌</button>
+
+</div><script>
+function loveMessage(){
+    alert("I loved you yesterday, I love you today, and I’ll love you in every tomorrow. Happy Valentine’s Day Cupcake 💕");
+}
+
+setInterval(()=>{
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*3+3)+"s";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+},400);
+
+const flowers=["🌷","🌹","🌹","🌸","💐","🌺","🤍🌹","❤️🌹"];
+setInterval(()=>{
+    let flower=document.createElement("div");
+    flower.className="flower";
+    flower.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+    flower.style.left=Math.random()*100+"vw";
+    flower.style.animationDuration=(Math.random()*4+5)+"s";
+    document.body.appendChild(flower);
+    setTimeout(()=>flower.remove(),8000);
+},900);
+</script></body>
+</html>
